@@ -1,0 +1,14 @@
+D:\PoCs\webServer\PatchPoC\PatchPoC\bin\Debug\netcoreapp2.2\PatchPoC.deps.json
+D:\PoCs\webServer\PatchPoC\PatchPoC\bin\Debug\netcoreapp2.2\PatchPoC.runtimeconfig.json
+D:\PoCs\webServer\PatchPoC\PatchPoC\bin\Debug\netcoreapp2.2\PatchPoC.runtimeconfig.dev.json
+D:\PoCs\webServer\PatchPoC\PatchPoC\bin\Debug\netcoreapp2.2\PatchPoC.dll
+D:\PoCs\webServer\PatchPoC\PatchPoC\bin\Debug\netcoreapp2.2\PatchPoC.pdb
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.csproj.CoreCompileInputs.cache
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.RazorAssemblyInfo.cache
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.RazorAssemblyInfo.cs
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.AssemblyInfoInputs.cache
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.AssemblyInfo.cs
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.RazorTargetAssemblyInfo.cache
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.dll
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.pdb
+D:\PoCs\webServer\PatchPoC\PatchPoC\obj\Debug\netcoreapp2.2\PatchPoC.csprojAssemblyReference.cache

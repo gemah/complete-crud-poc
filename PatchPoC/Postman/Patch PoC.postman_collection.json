@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "e4e37255-054f-48fd-b597-d8fa01afbf44",
+		"name": "Patch PoC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Service Is Running",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9b4eccae-798e-41ec-8a71-4e69128491de",
+						"exec": [
+							"pm.test(\"Service is running\", function () {",
+							"    pm.response.status.to.be.success;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/values",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new entry",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "22b04bb3-b37a-470d-8110-484f5531f84c",
+						"exec": [
+							"pm.test(\"Entity was created\", function () {",
+							"    pm.response.to.be.success;",
+							"});",
+							"",
+							"pm.globals.set(\"id\", pm.response.json().id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 123,\n    \"nome\": \"blive\",\n    \"endereco\": \"bh\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/values/",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve created entity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "212cc4d4-f31c-4673-b3f0-50475e48f95a",
+						"exec": [
+							"pm.test(\"Entity was retrieved\", function () {",
+							"    pm.response.to.be.success;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/values/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Entity Completely",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b38578b1-cc02-40b6-9dc9-c07786449527",
+						"exec": [
+							"pm.test(\"Entity was updated\", function () {",
+							"    pm.response.to.be.success;",
+							"    pm.response.json().nome === \"bLive\";",
+							"    pm.response.json().endereco === \"RJ\";",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nome\": \"bLive\",\n    \"endereco\": \"RJ\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/values/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Entity Partially",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "87040abb-1e2e-4699-936d-4e0062de505b",
+						"exec": [
+							"pm.test(\"Entity was updated\", function () {",
+							"    pm.response.to.be.success;",
+							"    pm.response.json().endereco === \"Belo Horizonte - MG\";",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"endereco\": \"Belo Horizonte - MG\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:5000/api/values/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Entity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ac998d48-4318-4e16-bd54-210adaf5ab07",
+						"exec": [
+							"pm.test(\"Entity was deleted\", function () {",
+							"    pm.response.to.be.success;",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:5000/api/values/{{id}}",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"values",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
